@@ -82,7 +82,7 @@ exports.postReview = async (req, res) => {
     res.redirect(`/dashboard?isAdmin=${false}&id=${id}`);
 };
 
-//getting all reviews
+//getting all review's
 exports.getReviews = async (req, res) => {
     const reviews = await Review.find({});
     res.render("getReviews", {
