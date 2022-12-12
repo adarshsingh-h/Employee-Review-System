@@ -1,0 +1,16 @@
+<%- include('partials/head') %>
+<title>Dashboard</title>
+</head>
+<body>
+    <%- include('partials/loggedInNavbar') %>
+<div>
+    <% for(let review of reviews) { %>
+    <div>
+        <p>Reviewer:<%= review.doneBy%></p>
+        <p>Reviewee:<%= review.doneFor%></p>
+        <p>Review:<%= review.review%></p>
+        <a href="/reviews/<%= review._id%>">Update</a>
+    </div>
+    <% } %>
+</div>
+<%- include('partials/footer') %>

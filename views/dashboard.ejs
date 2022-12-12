@@ -1,0 +1,15 @@
+<%- include('partials/head') %>
+<title>Dashboard</title>
+</head>
+<body>
+    <%- include('partials/loggedInNavbar') %>
+    <% if(isAdmin === 'true') { %>
+        <%- include('partials/employeeList') %>
+    <% } else { %>
+        <h2>Details</h2>
+        <p>Name: <%= user.name%></p>
+        <p>Email: <%= user.email%></p>
+        <h2>Performance Reviews</h2>
+        <%- include('partials/reviews') %>
+    <% } %>
+<%- include('partials/footer') %>

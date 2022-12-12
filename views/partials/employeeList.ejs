@@ -1,0 +1,15 @@
+<div>
+    <% for(let user of employees) { %>
+        <div>
+            <h3><%= user.name %></h3>
+            <p><%= user.email %></p>
+            <a href="/update-user/<%= user._id%>">Update</a>
+            <a href="/delete-user/<%= user._id%>">Delete</a>
+            <% if(user.isAdmin == false) { %>
+                <a id="makeAdmin" href="/make-admin-user/<%= user._id%>">Make Admin</a>
+            <% } else { %>
+                <button disabled>Already Admin</button>
+            <% } %>
+        </div>
+        <%}%>
+</div>

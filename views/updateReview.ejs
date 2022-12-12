@@ -1,0 +1,14 @@
+<%- include('partials/head') %>
+<title>Update Review</title>
+</head>
+<body>
+    <%- include('partials/loggedInNavbar') %>
+<form method="post" action="/reviews">
+    <h3>Reviewer: <%= review.doneBy%></h3>
+    <h3>Reviewee: <%= review.doneFor%></h3>
+    <textarea name="review" rows="20" cols="50"><%= review.review%></textarea>
+    <textarea name="id" hidden ><%= review._id%></textarea>
+    <br>
+    <button type="submit">Submit</button>
+</form>
+<%- include('partials/footer') %>

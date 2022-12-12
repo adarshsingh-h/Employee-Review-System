@@ -1,0 +1,30 @@
+<%- include('partials/head') %>
+<title>Assign Reviewer</title>
+</head>
+<body>
+    <%- include('partials/loggedInNavbar') %>
+    <div>
+        <form action="/assign-reviews" method="post">
+            <div id="review">
+                <div>
+            <h3>Reviewer</h3>
+            <select name="reviewer">
+                <% for(let user of employees) { %>
+                    <option><%= user.name %></option>
+                <% } %>
+            </select>
+        </div>
+        <div>
+            <h3>Reviewee</h3>
+            <select name="reviewee">
+                <% for(let user of employees) { %>
+                    <option><%= user.name %></option> 
+                <% } %>
+            </select>
+        </div>
+        </div>
+            <br>
+            <button id="reviewButton" type="submit">Submit</button>
+        </form>
+    </div>
+<%- include('partials/footer') %>

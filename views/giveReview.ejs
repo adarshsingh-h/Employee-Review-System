@@ -1,0 +1,13 @@
+<%- include('partials/head') %>
+<title>Dashboard</title>
+</head>
+<body>
+    <%- include('partials/loggedInNavbar') %>
+    <form action="/post-review" method="post">
+        <h3>Submit review for <%= name %></h3>
+        <textarea name="review" rows="10" cols="40"></textarea>
+        <textarea hidden name="name"><%= name %></textarea>
+        <textarea hidden name="id"><%= id %></textarea>
+        <button type="submit">Submit</button>
+    </form>
+<%- include('partials/footer') %>

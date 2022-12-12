@@ -1,0 +1,11 @@
+<div>
+    <% if(reviews.length === 0) { %>
+        <p>Nothing to show here</p>
+    <% } else { %>
+        <% for(let name of reviews) { %>
+        <div>
+            <h3><%= name %></h3>
+            <a href="/review?reviewee=<%= name %>&id=<%= id %>">Review</a>
+        </div>
+        <% } }%>
+</div>

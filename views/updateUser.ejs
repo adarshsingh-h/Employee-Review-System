@@ -1,0 +1,13 @@
+<%- include('partials/head') %>
+<title>Update User</title>
+</head>
+<body>
+    <%- include('partials/loggedInNavbar') %>
+<form method="post" action="/update-user/<%=user._id%>">
+    <label for="name">Name</label>
+    <input name = "name" id = "name" value=<%= user.name%>>
+    <label for="email">Email</label>
+    <input name = "email" id = "email" value=<%= user.email%>>
+    <button type="submit">Update</button>
+</form>
+<%- include('partials/footer') %>
